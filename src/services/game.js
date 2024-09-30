@@ -1,4 +1,4 @@
-import { Limit, fetch } from "./api";
+import { Limit, Api } from "./api";
 
 const Square = (id, value, imgUrl) => {
   return { id, value, imgUrl };
@@ -11,7 +11,7 @@ const Game = (size) => {
   let _squares = [];
 
   // Initialize the squares by fetching data from api.
-  // Return squares when all data is fetched, or throw an error.
+  // Will throw an error when there is something wrong.
   const init = async () => {
     _squares = [];
     _clicked.clear();
@@ -25,17 +25,16 @@ const Game = (size) => {
     // Fetch data from api to fill the squares
     _squares = await Promise.all(
       [...idList].map(async (id) => {
-        const data = await fetch(id);
+        const api = Api(id);
+        const data = await api.fetchFromApi(id);
         if (!data || data.id !== id)
           throw new Error("Cannot fetch pokemon from api.");
         return Square(id, data.value, data.imgUrl);
       })
     );
-    return _squares;
   };
 
   // Shuffle the squares.
-  // Return the shuffled squares.
   const shuffle = () => {
     for (let j = 0; j < _shuffle_times; j++) {
       const swapped = new Set();
@@ -57,7 +56,6 @@ const Game = (size) => {
         swapped.add(targetIdx);
       }
     }
-    return _squares;
   };
 
   // Click the square with the given id.
@@ -73,7 +71,13 @@ const Game = (size) => {
     return {
       isOver: _clicked.size === _size,
       score: _clicked.size,
-      squares: _squares,
     };
   };
+
+  // Return the squares.
+  const getSquares = () => _squares;
+
+  return { init, click, getSquares };
 };
+
+export default Game;

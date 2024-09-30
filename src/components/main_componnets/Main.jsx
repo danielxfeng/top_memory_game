@@ -14,7 +14,7 @@ const Main = ({ score, setScore }) => {
   return (
     <main>
       <Msg msg={msg} setMsg={setMsg} />
-      <Board score={score} setScore={setScore} setMsg={setMsg} />
+      <Board setScore={setScore} setMsg={setMsg} />
     </main>
   );
 };

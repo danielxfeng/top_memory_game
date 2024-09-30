@@ -1,10 +1,12 @@
+// A constant that represents the maximum number of pokemons that can be fetched.
+const Limit = 1010;
+
 // This Api module is a factory function that returns an object with two methods:
-// 1 Limit: a constant that represents the maximum number of pokemons that can be fetched.
-// 2 fetchFromApi: an async function that fetches the pokemon's name and image url from the pokeapi.co API.
+// fetchFromApi: an async function that fetches the pokemon's name and image url from the pokeapi.co API.
 //                 Cache mechanism is applied by using localStorage.
 //                 Will return null when error or no data is fetched.
 const Api = (id) => {
-  const Limit = 1010;
+  
   const _url = `https://pokeapi.co/api/v2/pokemon/${id}`;
   const _id = id;
   const _expirationTime = 1000 * 60 * 60 * 24 * 30; // 30 days
@@ -55,7 +57,7 @@ const Api = (id) => {
     }
   };
 
-  return { Limit, fetchFromApi };
+  return { fetchFromApi };
 };
 
-export default Api;
+export { Limit, Api };
