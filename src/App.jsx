@@ -1,14 +1,16 @@
-import './App.css'
+import "./App.css";
+import Header from "./components/Header";
+import Main from "./components/main_componnets/Main"
+import Footer from "./components/Footer";
 
 function App() {
-
   return (
     <>
-      <div>
-        <h1>Hello, World!</h1>
-      </div>
+      <Header />
+      <Main />
+      <Footer />
     </>
-  )
+  );
 }
 
-export default App
+export default App;
