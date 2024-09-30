@@ -6,11 +6,11 @@ const Limit = 1010;
 //                 Cache mechanism is applied by using localStorage.
 //                 Will return null when error or no data is fetched.
 const Api = (id) => {
-  
   const _url = `https://pokeapi.co/api/v2/pokemon/${id}`;
   const _id = id;
   const _expirationTime = 1000 * 60 * 60 * 24 * 30; // 30 days
 
+  // Read from localStorage.
   const fetchFromCache = () => {
     const data = localStorage.getItem(_id);
     if (!data) return null;
@@ -23,6 +23,7 @@ const Api = (id) => {
     return { id: _id, value: parsedData.value, imgUrl: parsedData.imgUrl };
   };
 
+  // Write to localStorage.
   const saveToCache = (id, value, imgUrl) => {
     try {
       const timestamp = Date.now();
@@ -32,6 +33,7 @@ const Api = (id) => {
     }
   };
 
+  // Fetch data from the API.
   const fetchFromApi = async () => {
     const cachedItem = fetchFromCache();
     if (cachedItem) {

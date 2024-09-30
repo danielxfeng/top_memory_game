@@ -66,7 +66,7 @@ const Board = ({ setScore, setMsg }) => {
           className={styles.square}
           key={square.id}
           data-key={square.id}
-          onClick={(e)=>perFormClick(e)}
+          onClick={(e) => perFormClick(e)}
         >
           <div className={styles.square__bg}></div>
           <div className={styles.square__content}>

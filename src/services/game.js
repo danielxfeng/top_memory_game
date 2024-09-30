@@ -4,6 +4,7 @@ const Square = (id, value, imgUrl) => {
   return { id, value, imgUrl };
 };
 
+// The logic of the game.
 const Game = (size) => {
   const _shuffle_times = 5;
   const _size = size;
