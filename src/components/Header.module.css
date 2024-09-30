@@ -1,14 +1,32 @@
 .header {
-    height: 120px;
-    width: 100%;
-    padding: 20px;
-    flex: none;
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
+  height: 120px;
+  width: 100%;
+  max-width: 100%;
+  overflow: hidden;
+  padding: 20px;
+  flex: none;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
 }
 
-.item {
-    display: flex;
-    flex-direction: column;
+.score__container {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  padding-right: 40px;
+}
+
+.score__item {
+  display: flex;
+}
+
+.score__label {
+  margin-right: 10px;
+}
+
+.title {
+  font-size: 2.5rem;
+  color: #7c2d12;
 }

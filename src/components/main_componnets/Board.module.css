@@ -1,7 +1,45 @@
 .board {
+    width: 100%;
+    padding: 20px;
     display: grid;
     grid-template-columns: repeat(6, 1fr);
     grid-gap: 10px;
+    justify-items: center;
+    align-items: center;
+}
+
+.square__content {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+.result {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+.result h2 {
+    font-size: 3rem;
+    color: #7c2d12;
+}
+
+.btn__restart {
+    border: none;
+    padding: 20px 40px;
+    background-color: #7c2d12;
+    color: antiquewhite;
+    font-size: 1.5rem;
+    font-family: "Kranky", serif;
+    border-radius: 10px;
+}
+
+.btn__restart:hover {
+    background-color: #c2410c;
+    cursor: pointer;
 }
 
 @media (max-width: 1024px) {

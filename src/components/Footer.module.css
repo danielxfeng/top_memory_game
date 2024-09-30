@@ -1,7 +1,16 @@
 .footer {
-    height: 50px;
+    height: 100px;
     width: 100%;
     flex: none;
     display: flex;
     justify-content: space-around;
+}
+
+.item {
+    display: flex;
+    align-items: center;
+}
+
+.item span {
+    margin-right: 10px;
 }

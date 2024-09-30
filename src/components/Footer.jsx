@@ -3,7 +3,7 @@ import styles from "./Footer.module.css";
 const Footer = () => (
   <footer className={styles.footer}>
     <p className={styles.item}>
-      &copy; 2024{" "}
+      <span>&copy; 2024</span>
       <a
         className="a a-no-change a-underline"
         href="https://github.com/danielxfeng/top_memory_game"
@@ -14,7 +14,7 @@ const Footer = () => (
       </a>
     </p>
     <p className={styles.item}>
-      Made by ❤️ <em>Daniel</em>
+      Made by ❤️<em>Daniel</em>❤️
     </p>
   </footer>
 );
