@@ -1,0 +1,14 @@
+.header {
+    height: 120px;
+    width: 100%;
+    padding: 20px;
+    flex: none;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.item {
+    display: flex;
+    flex-direction: column;
+}

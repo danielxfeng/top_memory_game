@@ -2,7 +2,7 @@ import { useState, useEffect } from "react";
 import Game from "../../services/game";
 import styles from "./Board.module.css";
 
-const size = 16;
+const size = 12;
 
 // The game board.
 const Board = ({ setScore, setMsg }) => {
@@ -60,7 +60,7 @@ const Board = ({ setScore, setMsg }) => {
 
   // The game board.
   return (
-    <div className={styles.border}>
+    <div className={styles.board}>
       {game.getSquares().map((square) => (
         <div
           className={styles.square}

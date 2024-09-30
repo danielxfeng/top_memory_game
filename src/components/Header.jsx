@@ -15,7 +15,7 @@ const Header = ({ score }) => {
   }, [score, highest]);
 
   return (
-    <header>
+    <header className={styles.header}>
       <a href="/" className="a a-no-change">
         <h1>Fancy Memory Game</h1>
       </a>
