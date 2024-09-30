@@ -15,7 +15,7 @@ const Footer = () => (
       </a>
     </p>
     <p className={styles.item}>
-      Made with ❤️ by <em>Daniel</em>
+      Made by ❤️ <em>Daniel</em>
     </p>
   </footer>
 );
