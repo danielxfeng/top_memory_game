@@ -16,7 +16,7 @@ const Header = ({ score }) => {
 
   return (
     <header>
-      <h1>Fancy Memory Game</h1>
+      <a href="/" className="a a-no-change"><h1>Fancy Memory Game</h1></a>
       <div className={styles.score__container}>
         <p className={styles.score__item}>
           <span className={styles.score__label}>Score:</span>
