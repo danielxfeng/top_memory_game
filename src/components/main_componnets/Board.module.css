@@ -30,16 +30,21 @@
 .btn__restart {
     border: none;
     padding: 20px 40px;
-    background-color: #7c2d12;
+    background-color: #c2410c;
     color: antiquewhite;
     font-size: 1.5rem;
     font-family: "Kranky", serif;
     border-radius: 10px;
+    transition: transform 0.2s ease-in-out;
+    box-shadow: 4px 4px 8px rgba(0, 0, 0, 0.4);
 }
 
 .btn__restart:hover {
-    background-color: #c2410c;
-    cursor: pointer;
+    transform: translate(-3px, -3px);
+}
+
+.btn__restart:active {
+    transform: translate(1px, 1px);
 }
 
 @media (max-width: 1024px) {

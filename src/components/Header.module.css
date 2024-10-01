@@ -1,13 +1,12 @@
 .header {
-  height: 120px;
-  width: 100%;
-  max-width: 100%;
-  overflow: hidden;
+  min-height: 120px;
   padding: 20px;
   flex: none;
   display: flex;
   justify-content: space-between;
   align-items: center;
+  background-color: #fdba74;
+  color: #7c2d12;
 }
 
 .score__container {
@@ -28,5 +27,4 @@
 
 .title {
   font-size: 2.5rem;
-  color: #7c2d12;
 }
