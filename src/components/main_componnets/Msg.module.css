@@ -1,5 +1,6 @@
 .msg {
   position: absolute;
+  max-width: 80%;
   top: 20px;
   left: 0;
   transform: translate(-100%, 0);
