@@ -5,19 +5,35 @@ html {
 body {
   margin: 0 auto;
   padding: 0;
-  box-sizing: border-box;
-  max-width: 1280px;
+  color: #c2410c;
 }
 
 #root {
   display: flex;
   flex-direction: column;
-  align-items: center;
   justify-content: center;
-  height: 100vh;
+  min-height: 100vh;
   background-color: antiquewhite;
 }
 
 h1, h2, h3 {
   font-family: "Kranky", serif;
+}
+
+.a-no-change, .a-no-change:hover, .a-no-change:active, .a-no-change:visited {
+  color: inherit;
+  text-decoration: none;
+  transition: transform 0.2s ease-in-out;
+}
+
+.a-no-change:hover {
+  transform: translate(-1px, -1px);
+}
+
+.a-no-change:active {
+  transform: translate(1px, 1px);
+}
+
+.a-underline {
+  text-decoration: underline;
 }

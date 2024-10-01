@@ -1,14 +1,19 @@
-import './App.css'
+import { useState } from "react";
+import Header from "./components/Header";
+import Main from "./components/main_componnets/Main"
+import Footer from "./components/Footer";
+import "./App.css";
 
 function App() {
+  const [score, setScore] = useState(0);
 
   return (
     <>
-      <div>
-        <h1>Hello, World!</h1>
-      </div>
+      <Header score={score} />
+      <Main score={score} setScore={setScore} />
+      <Footer />
     </>
-  )
+  );
 }
 
-export default App
+export default App;
