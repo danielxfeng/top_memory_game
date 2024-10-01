@@ -7,6 +7,17 @@
   align-items: center;
   background-color: #fdba74;
   color: #7c2d12;
+  clip-path: polygon(
+    0% 0%,
+    0% 100%,
+    7% 100%,
+    10% 87%,
+    13% 100%,
+    16% 83%,
+    19% 100%,
+    100% 100%,
+    100% 0%
+  );
 }
 
 .score__container {
@@ -27,4 +38,12 @@
 
 .title {
   font-size: 2.5rem;
+  opacity: 0;
+  transform: rotate(-3deg);
+  transition: opacity 0.2s ease, transform 0.3s ease-in-out;
+}
+
+.title.title__done {
+  opacity: 1;
+  transform: rotate(0);
 }

@@ -1,18 +1,27 @@
-import { useEffect } from "react";
+import { useEffect, useRef } from "react";
 import styles from "./Msg.module.css";
 
 // Display a message for a short period of time.
 const Msg = ({ msg, setMsg }) => {
-  useEffect(() => {
-    const timer = setTimeout(() => {
-      setMsg({ type: "none", text: "" });
-    }, 5000);
+  const ref = useRef(null);
 
-    return () => clearTimeout(timer);
+  useEffect(() => {
+    if (msg.type === "none") return;
+    const timer1 = setTimeout(() => {
+      ref.current.classList.add(styles.msg__show);
+    }, 500);
+    const timer2 = setTimeout(() => {
+      setMsg({ type: "none", text: "" });
+    }, 8000);
+
+    return () => {
+      clearTimeout(timer1);
+      clearTimeout(timer2);
+    };
   }, [msg, setMsg]);
 
   return !msg || msg.type === "none" ? null : (
-    <div className={styles.msg}>
+    <div ref={ref} className={styles.msg}>
       <h2>{msg.type}</h2>
       <p>{msg.text}</p>
     </div>
