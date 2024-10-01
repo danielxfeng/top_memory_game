@@ -19,6 +19,10 @@ const Header = ({ score }) => {
     const timeout = setTimeout(() => {
       refTitle.current.classList.add(styles.title__done);
     }, 100);
+
+    return () => {
+      clearTimeout(timeout);
+    }
   }, []);
 
   return (

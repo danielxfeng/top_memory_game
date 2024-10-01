@@ -1,4 +1,4 @@
-import { useState, useEffect } from "react";
+import { useState, useEffect, useRef } from "react";
 import Game from "../../services/game";
 import styles from "./Board.module.css";
 
@@ -6,6 +6,10 @@ const size = 12;
 
 // The game board.
 const Board = ({ setScore, setMsg }) => {
+  // The references to the Game Over screen.
+  const leftRef = useRef(null);
+  const rightRef = useRef(null);
+
   // Manage the game instance.
   const [game, setGame] = useState(null);
   // The game over flag.
@@ -30,8 +34,21 @@ const Board = ({ setScore, setMsg }) => {
     initGame();
   }, []);
 
+  // Add the done class to the Game Over screen.
+  useEffect(() => {
+    if (!isOver) return;
+    const timeout = setTimeout(() => {
+      leftRef.current.classList.add(styles.result__done);
+      rightRef.current.classList.add(styles.result__done);
+    }, 500);
+
+    return () => {
+      clearTimeout(timeout);
+    }
+  }, [isOver]);
+
   // Perform a click event.
-  const perFormClick = (e) => {
+  const performClick = (e) => {
     e.preventDefault();
     if (!game) return;
 
@@ -45,10 +62,14 @@ const Board = ({ setScore, setMsg }) => {
   if (!game) return <div className={styles.loading}>Loading...</div>;
 
   // The game over screen.
-  if (isOver)
+  if (isOver) {
+
     return (
       <div className={styles.result}>
-        <h2>Game Over</h2>
+        <h2>
+          <span ref={leftRef} className={styles.result__left}>Game</span>
+          <span ref={rightRef} className={styles.result__right}>Over</span>
+        </h2>
         <button
           className={styles.btn__restart}
           onClick={() => window.location.reload()}
@@ -57,6 +78,7 @@ const Board = ({ setScore, setMsg }) => {
         </button>
       </div>
     );
+  }
 
   // The game board.
   return (
@@ -66,9 +88,8 @@ const Board = ({ setScore, setMsg }) => {
           className={styles.square}
           key={square.id}
           data-key={square.id}
-          onClick={(e) => perFormClick(e)}
+          onClick={(e) => performClick(e)}
         >
-          <div className={styles.square__bg}></div>
           <div className={styles.square__content}>
             <img
               className={styles.square__img}
