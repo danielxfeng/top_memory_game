@@ -5,7 +5,7 @@ This is a memory game where you can click on different Pokémon. However, if you
 ## Description
 
 - This project is an exercise from [The Odin Project](https://www.theodinproject.com).
-- You can play a live demo of the game at [[https://fancymemorygame.netlify.com](https://fancymemorygame.netlify.app/).
+- You can play a live demo of the game at [https://fancymemorygame.netlify.com](https://fancymemorygame.netlify.app/).
 - The game is built using **React** and **Vite** for fast development and performance.
 - The highest score is saved locally in your browser using **Local Storage**, so you can track your progress.
 
